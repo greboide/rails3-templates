@@ -1,11 +1,9 @@
 #----------------------------------------------------------------------------
 # Basic production, development, and test gems
 #----------------------------------------------------------------------------
-path = "http://github.com/greenplastik/rails3-templates/raw/master"
+path = "http://github.com/greboide/rails3-templates/raw/master"
 
 run 'gem sources -a http://gems.github.com'
-run 'gem install rails --pre'
-run 'gem install bundler --pre'
 
 require 'rails'
 require 'bundler'
@@ -63,18 +61,18 @@ if linguistics
 end
 
 if chronic
-  gem 'robballou-chronic'
+  gem 'chronic18n'
 end
 
-if simple_form
-  run 'gem install simple_form'
-  gem 'simple_form'
-  run 'rails generate simple_form:install'
+if formtastic
+  run 'gem install formtastic'
+  gem 'formtastic'
+  run 'rails generate formtastic:install'
 end
 
 if friendly_id
   run 'gem install friendly_id'
-  gem "friendly_id", "~> 3.0"
+  gem "friendly_id", "~> 3.1"
   run 'rails generate friendly_id'
 end
 
