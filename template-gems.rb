@@ -81,8 +81,8 @@ if nokogiri
 end
 
 if rails3_generators
-  run 'gem install rails3_generators'
-  gem 'rails3_generators'
+  run 'gem install rails3-generators'
+  gem 'rails3-generators'
 end
 
 apply "#{path}/template-test.rb"
