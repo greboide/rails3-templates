@@ -14,7 +14,7 @@ rdiscount = agree("Do you want to add the rdiscount gem?"){ |q| q.default = "Yes
 gravatar = agree("Do you want to add the gravatar gem?"){ |q| q.default = "Yes" }
 linguistics = agree("Do you want to add the linguistics gems?"){ |q| q.default = "Yes" }
 chronic = agree("Do you want to add the chronic gems?"){ |q| q.default = "Yes" }
-formtastic = agree("Do you want to add the simple form gem?"){ |q| q.default = "Yes" }
+formtastic = agree("Do you want to add the formtastic gem?"){ |q| q.default = "Yes" }
 friendly_id = agree("Do you want to add the friendly_id gem?"){ |q| q.default = "Yes" }
 nokogiri = agree("Do you want to add the nokogiri gem?"){ |q| q.default = "Yes" }
 rails3_generators = agree("Do you want to use the rails3_generators gem?"){ |q| q.default = "Yes" }

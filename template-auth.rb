@@ -9,10 +9,10 @@ else
   devise_model = devise_model.titleize
 end
 
-run 'gem install cancan devise warden'
 gem 'cancan'
 gem 'devise', :git => "git://github.com/plataformatec/devise.git"
 gem 'warden'
+run 'bundle install'
 run 'rails generate devise:install'
 run 'rails generate devise:views'
 run "rails generate devise:#{devise_model}"
