@@ -12,6 +12,7 @@ end
 gem 'cancan'
 gem 'devise', :git => "git://github.com/plataformatec/devise.git"
 gem 'warden'
+run 'pwd' # i want to know where am i.
 run 'bundle install'
 run 'rails generate devise:install'
 run 'rails generate devise:views'
