@@ -1,23 +1,12 @@
 #----------------------------------------------------------------------------
 # Basic production, development, and test gems
 #----------------------------------------------------------------------------
-path = "http://github.com/greboide/rails3-templates/raw/master"
 
 run 'gem sources -a http://gems.github.com'
 
 require 'rails'
 require 'bundler'
 require 'highline/import'
-
-auth = agree("Do you want to add authentication gems (devise/warden, cancan)?"){ |q| q.default = "Yes" }
-rdiscount = agree("Do you want to add the rdiscount gem?"){ |q| q.default = "Yes" }
-gravatar = agree("Do you want to add the gravatar gem?"){ |q| q.default = "Yes" }
-linguistics = agree("Do you want to add the linguistics gems?"){ |q| q.default = "Yes" }
-chronic = agree("Do you want to add the chronic gems?"){ |q| q.default = "Yes" }
-formtastic = agree("Do you want to add the formtastic gem?"){ |q| q.default = "Yes" }
-friendly_id = agree("Do you want to add the friendly_id gem?"){ |q| q.default = "Yes" }
-nokogiri = agree("Do you want to add the nokogiri gem?"){ |q| q.default = "Yes" }
-rails3_generators = agree("Do you want to use the rails3_generators gem?"){ |q| q.default = "Yes" }
 
 run 'rm Gemfile'
 file 'Gemfile', <<-FILE
@@ -27,62 +16,24 @@ source 'http://gems.github.com'
 gem 'rails'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
-
 group :development do
   gem 'nifty-generators'
   gem 'wirble'
   gem 'yaml_db'
+  gem 'ruby-debug'
+
 end
 
 FILE
 
-if auth
-  apply "#{path}/template-auth.rb"
-end
-
-if rdiscount
   gem 'rdiscount'
-end
-
-if gravatar
   gem 'gravatar_image_tag'
-end
-
-if linguistics
   gem 'linguistics'
-end
-
-if chronic
   gem 'chronic18n'
-end
-
-if formtastic
-  run 'gem install formtastic'
   gem 'formtastic'
   run 'rails generate formtastic:install'
-end
-
-if friendly_id
-  run 'gem install friendly_id'
   gem "friendly_id", "~> 3.1"
   run 'rails generate friendly_id'
-end
-
-if nokogiri
   gem 'nokogiri', '>=1.4.1'
-end
-
-if rails3_generators
-  run 'gem install rails3-generators'
   gem 'rails3-generators'
-end
 
-apply "#{path}/template-test.rb"
