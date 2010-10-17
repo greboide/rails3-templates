@@ -20,7 +20,7 @@ group :development do
   gem 'nifty-generators'
   gem 'wirble'
   gem 'yaml_db'
-  gem 'ruby-debug'
+  gem 'ruby-debug19'
 
 end
 
